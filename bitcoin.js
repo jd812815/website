@@ -1,15 +1,14 @@
 function msg(){
  alert("Hello Javatpoint");
-}
+}}
 
 function pull() {
-  $.getJSON('http://time.jsontest.com', function(data) {
+  var coinInfo = "https://api.coingecko.com/api/v3/exchange_rates";
+  $.getJSON( coinInfo, function(json){
+    data = json;
+  }
+)}
 
-     var text = `Date: ${data.date}<br>
-                 Time: ${data.time}<br>
-                 Unix time: ${data.milliseconds_since_epoch}`
-
-
-     $(".mypanel").html(text);
-  });
+function log() {
+  console.log(data)
 }
